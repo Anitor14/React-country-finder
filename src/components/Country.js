@@ -20,7 +20,7 @@ const Country = ({ id, name, capital, region, population, flag }) => {
           <span>Capital: </span>
           {capital}
         </p>
-        <Link to={`/country/${id}`} className="btn btn-primary">
+        <Link to={`/country/${name}`} className="btn btn-primary">
           details
         </Link>
       </div>
