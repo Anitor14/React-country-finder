@@ -9,6 +9,10 @@ const SingleCountry = () => {
   const [loading, setLoading] = React.useState(false);
   const [country, setCountry] = React.useState(null);
 
+  const addCommaNumber = (number) => {
+    return number.toLocaleString("en-US");
+  };
+
   React.useEffect(() => {
     getCocktail();
   }, [id]);
@@ -97,44 +101,48 @@ const SingleCountry = () => {
           </div>
           <div className="details_about--left">
             <p>
-              "Native name :"
-              <span className="details_about--native-name">{nativeName}</span>
+              Native name :
+              <span className="details_about--native-name">{` ${nativeName}`}</span>
             </p>
             <p>
-              "Population :"
-              <span className="details_about--population">{population}</span>
+              Population :
+              <span className="details_about--population">{` ${addCommaNumber(
+                population
+              )}`}</span>
             </p>
             <p>
-              "Region :"
-              <span className="details_about--region">{region}</span>
+              Region :
+              <span className="details_about--region">{` ${region}`}</span>
             </p>
             <p>
-              "Sub Region :"
-              <span className="details_about--sub-region">{subregion}</span>
+              Sub Region :
+              <span className="details_about--sub-region">{` ${subregion}`}</span>
             </p>
             <p>
-              "Capital :"
-              <span className="details_about--capital">{capital}</span>
+              Capital :
+              <span className="details_about--capital">{` ${capital}`}</span>
             </p>
           </div>
           <div className="details_about--right">
             <p>
-              "Top Level Domain :"
+              Top Level Domain :
               <span className="details_about--native-name">
-                {topLevelDomain[0]}
+                {` ${topLevelDomain[0]}`}
               </span>
             </p>
             <p>
-              "Currencies :"
+              Currencies :
               <span className="details_about--currencies">
-                {currencies.code}
+                {` ${currencies[0].code}`}
               </span>
             </p>
             <p>
-              "Languages :"
+              Languages :
               <span className="details_about--language">
                 {languages.map((language) => {
-                  return `${language.name}, `;
+                  return ` ${language.name}${
+                    language !== languages[languages.length - 1] ? "," : ""
+                  }`;
                 })}
               </span>
             </p>

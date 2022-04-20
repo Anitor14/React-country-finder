@@ -2,15 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Country = ({ id, name, capital, region, population, flag }) => {
+  const addCommaNumber = (number) => {
+    return number.toLocaleString("en-US");
+  };
   return (
     <article className="country">
       <img src={flag} alt={name} className="country_img" />
-
       <div className="country_data">
         <h4 className="country_name">{name}</h4>
         <p className="country_row">
           <span>Population: </span>
-          {population}
+          {`${addCommaNumber(population)}`}
         </p>
         <p className="country_row region">
           <span>Region: </span>
