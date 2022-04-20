@@ -352,7 +352,7 @@ Single Country
 }
 
 .details__flag img {
-  max-width: 60rem;
+  max-width: 85%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
